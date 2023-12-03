@@ -1,0 +1,9 @@
+[submodule "3rdparty/fmt"]
+	path = 3rdparty/fmt
+	url = https://github.com/fmtlib/fmt
+[submodule "3rdparty/re2"]
+	path = 3rdparty/re2
+	url = https://github.com/google/re2
+[submodule "3rdparty/abseil-cpp"]
+	path = 3rdparty/abseil-cpp
+	url = https://github.com/abseil/abseil-cpp
