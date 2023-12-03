@@ -131,7 +131,10 @@ namespace {
   }
 } // namespace `anonymous`
 
-int main() {
+int main(int argc, char* argv[]) {
+  fmt::println("current-program: {}", 
+    aoc::fs::path(argv[0])
+      .filename().string());
   aoc::BoxedStr input = 
     aoc::read_file("input.txt");
   if(!input) {

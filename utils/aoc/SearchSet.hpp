@@ -29,14 +29,10 @@
 #include <type_traits>
 #include <aoc/StringUtils.hpp>
 #include <aoc/Fmt.hpp>
-#include <re2/re2.h>
-#include <absl/strings/string_view.h>
+#include <aoc/Re2.hpp>
 
 namespace aoc {
 namespace H {
-  using Pattern = re2::RE2;
-  using PatternRef = absl::string_view;
-
   template <typename T>
   concept is_iterable = 
    requires(std::remove_cvref_t<T>& t) {
@@ -103,7 +99,7 @@ namespace H {
     ALWAYS_INLINE static StrRef 
      Locate(StrRef str, const H::Pattern& pat) {
       H::PatternRef pstr;
-      if(RE2::FullMatch(str, pat, &pstr)) LIKELY {
+      if(H::full_match(str, pat, pstr)) LIKELY {
         return { pstr.begin(), pstr.end() };
       } else UNLIKELY {
         return StrRef();

@@ -31,7 +31,10 @@
 #include <aoc/Std.hpp>
 
 namespace aoc {
-  BoxedStr read_file(const Path& filepath) {
+  BoxedStr read_file(Path filepath) {
+    if(filepath.is_relative()) {
+      filepath = (fs::current_path() / filepath);
+    }
     std::ifstream is ( filepath, std::ios::binary );
     is.unsetf(std::ios::skipws);
     if(not is) return BoxedStr();

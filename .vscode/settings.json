@@ -89,6 +89,7 @@
         "__tree": "cpp",
         "semaphore": "cpp",
         "cassert": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "*.inc": "cpp"
     }
 }
